@@ -70,8 +70,8 @@
 	   			</div>
    			</div>
 			
-			<div data-role="collapsible-set">
-				<div data-role="collapsible">
+			<div data-role="collapsible-set">							
+				<div data-role="collapsible" >
 					<h2>Class1</h1>
 					<ul id="goodListCls1" data-role="listview">
 						<li><a href="#" data-transition="pop"><img src="img/test1.png"></img><span>test1</span></a></li>
@@ -97,7 +97,7 @@
 		<div data-role="footer"class ="foot ui-bar" data-position="fixed">
 			<a href="#pageHome" id="home"data-type="button" data-icon="home" data-iconpos="top">首页</a>			
 			 <a href="#pageSelfInfo" id="myInfo"data-type="button" data-icon="user" data-iconpos="top">我的</a>
-			<a href="#" id="setting"data-type="button" data-icon="grid" data-iconpos="top">更多</a>
+			<a href="#moreInfo" id="setting"data-type="button" data-icon="grid" data-iconpos="top">更多</a>
 		</div>
 		
 	</div>
@@ -135,7 +135,7 @@
 		</div>
 		<div data-role="content" class="fpContent" id="page1_content">
 			<ul data-role="listview" data-inset="true">
-				<li><a href="#" data-transition="pop">匿名用户</a></li>
+				<li><a href="#" data-transition="pop">匿名用户</a><span class="ui-li-aside">请登录</span></li>
 			</ul>
 		
 			<ul data-role="listview" data-inset="true">
@@ -148,6 +148,32 @@
 				<li data-role = "list-divider">其他</li>
 				<li><a href="#" data-transition="pop">代金劵</a><span class="ui-li-count">0</span></li>				
 			</ul>	
+			
+		</div>
+		<div data-role="footer"class ="foot ui-bar" data-position="fixed">
+			<a href="#pageHome" id="home"data-type="button" data-icon="home" data-iconpos="top">首页</a>			
+			 <a href="#pageSelfInfo" id="myInfo"data-type="button" data-icon="user" data-iconpos="top">我的</a>
+			<a href="#moreInfo" id="setting"data-type="button" data-icon="grid" data-iconpos="top">更多</a>
+		</div>
+		
+	</div>
+	
+	<!-- moreInfo page -->
+	<div data-role="page" id="moreInfo">
+		<div data-role="header" data-theme="a"class="head" data-position="fixed">
+			
+			<h1>更多</h1>						
+		</div>
+		<div data-role="content" class="fpContent" id="page1_content">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#" data-transition="pop">公告中心</a></li>				
+				<li><a href="#" data-transition="pop">忘记密码</a></li>
+				<li><a href="#" data-transition="pop">帮助中心</a></li>
+				<li><a href="#" data-transition="pop">用户反馈</a></li>
+				<li><a href="#" data-transition="pop">关于</a></li>
+				<li><button>退出登录</button></li>
+			</ul>
+		
 			
 		</div>
 		<div data-role="footer"class ="foot ui-bar" data-position="fixed">
