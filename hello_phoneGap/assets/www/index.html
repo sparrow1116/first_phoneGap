@@ -110,15 +110,17 @@
 				 <img src="img/icon.png" class="baseIconIna" data-icon="arrow-l"></img> </a>							
 		</div>
 		<div data-role="content" >
+			
 			<ul data-role="listview" data-inset="true">
+				<li> <button>编辑店铺信息</button> </li>
 				<li data-role = "list-divider">订单信息</li>
-				<li><a href="#" data-transition="pop">张先生</a><span>13770644937</span></li>
+				<li><a href="#" data-transition="pop">张先生</a><span class="ui-li-aside">13770644937</span></li>
 			</ul>
 		</div>
 		<div data-role="footer"class ="foot ui-bar" data-position="fixed">
 			<a href="#pageHome" id="home"data-type="button" data-icon="home" data-iconpos="top">首页</a>			
 			 <a href="#pageSelfInfo" id="myInfo"data-type="button" data-icon="user" data-iconpos="top">我的</a>
-			<a href="#" id="edit"data-type="button" data-icon="edit" data-iconpos="top">编辑</a>
+			<a href="#moreInfo" id="setting"data-type="button" data-icon="grid" data-iconpos="top">更多</a>
 		</div>
 	</div>
 	
@@ -135,7 +137,7 @@
 		</div>
 		<div data-role="content" class="fpContent" id="page1_content">
 			<ul data-role="listview" data-inset="true">
-				<li><a href="#" data-transition="pop">匿名用户</a><span class="ui-li-aside">请登录</span></li>
+				<li><a href="#login" data-transition="pop">匿名用户</a><span class="ui-li-aside">请登录</span></li>
 			</ul>
 		
 			<ul data-role="listview" data-inset="true">
@@ -166,6 +168,7 @@
 		</div>
 		<div data-role="content" class="fpContent" id="page1_content">
 			<ul data-role="listview" data-inset="true">
+				<li><button>我要开店</button></li>
 				<li><a href="#" data-transition="pop">公告中心</a></li>				
 				<li><a href="#" data-transition="pop">忘记密码</a></li>
 				<li><a href="#" data-transition="pop">帮助中心</a></li>
@@ -184,22 +187,20 @@
 		
 	</div>
 	
-	<!-- <div data-role="dialog" id="dg1" data-overlay-theme = "a">
-		<div data-role = "header">
-			<p>本城市无区县</p>
-		</div>
-		<div data-role = "content">
-			<div data-role="listview">
-				<ul>
-					<li>
-						<span>当前所在城市：南京</span>
-						<span class="ui-btn-right">切换</span>
-					</li>
-				<ul>
-			</div>
-		</div>
-			
-	</div> -->
+	 <div data-role="dialog" id="login" data-overlay-theme = "a">
+	 	<div data-role="header">
+	 		<h1>登录联系信息</h1>
+	 	</div>
+	 	<div data-role="content">
+		 	<div data-role="fieldcontainer">
+		 		<label for="costomerName">联系人:</label>
+		 		<input type="text" id="costomerName" name="costomerName"></input>
+		 		<label for="costomerTel">手机号码:</label>
+		 		<input type="text" id="costomerTel" name="costomerTel"></input>
+		 		<button>登录</button>
+		 	</div>	
+	 	</div>					
+	</div>
 	
 	
 	<script src="initPage.js" type="text/javascript"></script>
