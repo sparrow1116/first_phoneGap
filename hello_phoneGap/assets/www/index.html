@@ -162,22 +162,19 @@
 	
 	<!-- moreInfo page -->
 	<div data-role="page" id="moreInfo">
-		<div data-role="header" data-theme="a"class="head" data-position="fixed">
-			
+		<div data-role="header" data-theme="a"class="head" data-position="fixed">			
 			<h1>更多</h1>						
 		</div>
 		<div data-role="content" class="fpContent" id="page1_content">
 			<ul data-role="listview" data-inset="true">
-				<li><button>我要开店</button></li>
+				<li><button id="setUpShop">我要开店</button></li>
 				<li><a href="#" data-transition="pop">公告中心</a></li>				
 				<li><a href="#" data-transition="pop">忘记密码</a></li>
 				<li><a href="#" data-transition="pop">帮助中心</a></li>
 				<li><a href="#" data-transition="pop">用户反馈</a></li>
 				<li><a href="#" data-transition="pop">关于</a></li>
 				<li><button>退出登录</button></li>
-			</ul>
-		
-			
+			</ul>			
 		</div>
 		<div data-role="footer"class ="foot ui-bar" data-position="fixed">
 			<a href="#pageHome" id="home"data-type="button" data-icon="home" data-iconpos="top">首页</a>			
@@ -186,7 +183,65 @@
 		</div>
 		
 	</div>
+	<!-- boss upload good page -->
+	<div data-role="page" id="uploadpage">
+		<div data-role="header">
+			<h1>上传您的商品信息</h1>
+			<a href="#moreInfo" data-type="button" data-icon="arrow-l" class="backBtn" data-iconpos="left">
+				 <img src="img/icon.png" class="baseIconIna" data-icon="arrow-l"></img> </a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li data-role = "list-divider">已上传的商品：</li>
+				<li><span>Good1</span><span class="ui-li-aside">￥10.00元</span></li>
+			</ul>
+			<div data-role="fieldcontainer">
+				<label>上传图片：</label>
+				<input type="text"></input>
+				<label>商品名：</label>
+				<input type="text"></input>
+				<label>价格：</label>
+				<input type="text"></input>
+				<label>商品简述：</label>
+				<input type="text"></input>
+			</div>
+		</div>
+		<div data-role="footer">
+			<button>上传商品</button>
+		</div>
+	</div>
 	
+	<!-- Business Rigister page -->
+	<div data-role="page" id="businessRigister">
+		<div data-role="header">
+			<h1>商户注册信息</h1>
+			<a href="#moreInfo" data-type="button" data-icon="arrow-l" class="backBtn" data-iconpos="left">
+				 <img src="img/icon.png" class="baseIconIna" data-icon="arrow-l"></img> </a>	
+		</div>
+		<div data-role="content">
+			<div data-role="fieldcontainer">
+				<label>啊哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈嘻嘻i嘻嘻嘻嘻嘻</label>
+				<label for="treaty">本人已阅读并同意上述条款</label>
+				<input type="checkbox" id="treaty" name="treaty" value="yes"></input>
+			</div>
+			<div data-role="fieldcontainer">
+		 		<label for="tradeName">店名:</label>
+		 		<input type="text" id="tradeName" name="tradeName"></input>
+		 		<label for="bossName">店主姓名:</label>
+		 		<input type="text" id="bossName" name="bossName"></input>
+		 		<label for="bossTel">手机号码:</label>
+		 		<input type="text" id="costomerTel" name="costomerTel"></input>
+		 		<label for="bossPassWord">密码:</label>
+		 		<input type="password" id="bossPassWord" name="bossPassWord"></input>
+		 		<label for="repPassName">确认密码:</label>
+		 		<input type="password" id="repPassName" name="repPassName"></input>
+		 		<button>注册</button>
+		 	</div>	
+		
+		</div>
+	</div>
+	
+	<!-- user login page -->
 	 <div data-role="dialog" id="login" data-overlay-theme = "a">
 	 	<div data-role="header">
 	 		<h1>登录联系信息</h1>
@@ -194,10 +249,10 @@
 	 	<div data-role="content">
 		 	<div data-role="fieldcontainer">
 		 		<label for="costomerName">联系人:</label>
-		 		<input type="text" id="costomerName" name="costomerName"></input>
+		 		<input type="text" id="costomerName" name="costomerName" required placeholder="联系人 如：张先生"></input>
 		 		<label for="costomerTel">手机号码:</label>
-		 		<input type="text" id="costomerTel" name="costomerTel"></input>
-		 		<button>登录</button>
+		 		<input type="text" id="costomerTel" name="costomerTel" required placeholder="请输入手机号码"></input>
+		 		<button id="userLogin">登录</button>
 		 	</div>	
 	 	</div>					
 	</div>
