@@ -136,8 +136,8 @@
 				 <img src="img/icon.png" class="baseIconIna" data-icon="arrow-l"></img> </a>							
 		</div>
 		<div data-role="content" class="fpContent" id="page1_content">
-			<ul data-role="listview" data-inset="true">
-				<li><a href="#login" data-transition="pop">匿名用户</a><span class="ui-li-aside">请登录</span></li>
+			<ul data-role="listview" data-inset="true" id="userListview">
+				<li id="userBar"><a href="#login" data-transition="pop">匿名用户</a><span class="ui-li-aside">请登录</span></li>
 			</ul>
 		
 			<ul data-role="listview" data-inset="true">
@@ -230,7 +230,7 @@
 		 		<label for="bossName">店主姓名:</label>
 		 		<input type="text" id="bossName" name="bossName"></input>
 		 		<label for="bossTel">手机号码:</label>
-		 		<input type="text" id="costomerTel" name="costomerTel"></input>
+		 		<input type="text" id="bossTel" name="bossTel"></input>
 		 		<label for="bossPassWord">密码:</label>
 		 		<input type="password" id="bossPassWord" name="bossPassWord"></input>
 		 		<label for="repPassName">确认密码:</label>
@@ -257,7 +257,19 @@
 	 	</div>					
 	</div>
 	
+	<!-- alert dialog -->
+	<div data-role="dialog" id="alert" data-overlay-theme="a">
+		<div data-role="header">
+			<h1>错误信息</h1>
+		</div>
+		<div data-role="content">
+			<div data-role="fieldcontainer">
+				<label id="alertMsg">错了</label>
+			</div>
+		</div>
+	</div>
 	
-	<script src="initPage.js" type="text/javascript"></script>
+	
+	<script src="initPage.js" type="text/javascript" charset="gb2312"></script>
 </body>
 </html>

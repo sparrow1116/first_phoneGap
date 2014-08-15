@@ -1,38 +1,35 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+  <title>Understanding the jQuery Mobile API</title>
+  <link rel="stylesheet" href="lib/jquery.mobile-1.4.3.min.css" type="text/css"></link>
+	<link rel="stylesheet" href="lib/jquery.mobile.theme-1.4.3.min.css" type="text/css"></link>
+  <script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="lib/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
+  <script>
+$(document).on("pageinit","#pageone",function(){
+  $("p").on("tap",function(){
+    $(this).hide();
+  });                       
+});
+</script>
 </head>
+
 <body>
+  <div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>tap ÊÂ¼ş</h1>
+  </div>
 
-<div data-role="controlgroup" data-type="vertical">
-			<div class="ui-grid-b">
-     			<div class="ui-block-a">A
-     			</div>
-     			<div class="ui-block-b">B
-     			</div>
-     			<div class="ui-block-c">C
-     			</div>
-   			</div>
-   			<div class="ui-grid-b">
-     			<div class="ui-block-a">D
-     			</div>
-     			<div class="ui-block-b">E
-     			</div>
-     			<div class="ui-block-c">F
-     			</div>
-   			</div>
-   			</div>
+  <div data-role="content">
+    <p>ÇÃ»÷ÎÒ£¬ÎÒ»áÏûÊ§¡£</p>
+    <p>ÇÃ»÷ÎÒ£¬ÎÒ»áÏûÊ§¡£</p>
+    <p>ÇÃ»÷ÎÒ£¬ÎÒÒ²»áÏûÊ§¡£</p>
+  </div>
 
+  <div data-role="footer">
+    <h1>Ò³½ÅÎÄ±¾</h1>
+  </div>
+</div> 
 </body>
 </html>
-
-
-<li><label id="notice" for="notice">æ¶ˆæ¯é€šçŸ¥</label>
-					<select id="noticeSwitch" name="notice" data-role="slider">
-					<option value="no">å…³</option>
-					<option value="yes">å¼€</option>
-					</select>
-					
-				</li>
