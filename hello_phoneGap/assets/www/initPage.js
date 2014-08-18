@@ -8,9 +8,9 @@
 //}
 
 var storage = null;
-var telephone = null;
-var userName = null;
-var role = null;
+var tel = null;
+var name = null;
+var localRole = null;
 
 
 function isMobil(ss){
@@ -33,15 +33,34 @@ function getLocalStorage(){
 }
 
 function changeUserBar(name,tel){
-	$("#userBar").empty();
-	var barInfo = "<label class='theUser'>"+name+"</label>";
-	$("#userBar").append(barInfo);
-	$("#userListview").listview("refresh");
+	if(name && tel){
+		$("#userBar").empty();
+		var barInfo = "<label class='theUser'>"+name+"</label>";
+		$("#userBar").append(barInfo);
+		$("#userListview").listview("refresh");
+	}else{
+		$("#userBar").empty();
+		var barInfo = "<a href='#login' data-transition='pop'>匿名用户</a><span class='ui-li-aside'>请登录</span>";
+		$("#userBar").append(barInfo);
+		$("#userListview").listview("refresh");
+	}
+	
 }
 
 
 $(document).on("pageinit","#moreInfo",function(){
 	$("#setUpShop").on('tap',function(){$.mobile.changePage($("#businessRigister"))});
+	$("#unLogin").on('tap',function(){
+		
+		if(storage){
+			storage.removeItem('tel');
+			storage.removeItem('name');
+		}
+		
+		changeUserBar();
+		$.mobile.changePage($("#pageSelfInfo"));
+	});
+	
 });
 
 $(document).on("pageinit","#login",function(){
@@ -67,27 +86,87 @@ $(document).on("pageinit","#login",function(){
 			return;
 		}
 		changeUserBar(name,tel);
-		var tt
-		for(a in storage){
-			tt = storage[a];
+		if(storage){
+			storage.setItem("tel",tel);
+			storage.setItem("name",name);
+			
 		}
-		$("#alertMsg").text(storage);
-		$.mobile.changePage($("#alert"));
-//		storage.setItem("tel",tel);
-//		storage.setItem("name",name);
-//		$.mobile.changePage($("#pageSelfInfo"));
+		
+		$.mobile.changePage($("#pageSelfInfo"));
+	});
+});
+
+$(document).on("pageinit","#businessRigister",function(){
+	$("#boss_register").tap(function(){
+		var readTreaty = $("#treaty")[0].checked;
+		var shop_name = $("#tradeName").val();
+		var boss_name = $("#bossName").val();
+		var boss_Tel = $("#bossTel").val();
+		var password = $("#bossPassWord").val();
+		var rep_password = $("#repPassName").val();
+		
+		if(!readTreaty){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("请勾选已阅读开店条款");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		if(!shop_name){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("请输入您店铺的名称");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		if(!boss_name){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("请输入店主的名称");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		if(!boss_Tel){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("请输入店主的手机号码");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		if(!password){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("请输入您的密码");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		if(!rep_password){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("请再次输入您的密码");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		if(rep_password != password){
+			$("#alertMsg").empty();
+			$("#alertMsg").text("您2次输入的密码不同");
+			$.mobile.changePage($("#alert"));
+			return;
+		}
+		
+		if(storage){
+//			storage.setItem("tel",tel);
+//			storage.setItem("name",name);
+//			storage.setItem("localRole",true);
+//			storage.setItem("password",password);
+//			storage.setItem("shopName",shop_name);
+		}
+		$.mobile.changePage($("#uploadpage"));
 	});
 });
 
 $(document).ready(function(){
 	storage = getLocalStorage();
-	telephone = storage.getItem("tel");
-	userName =storage.getItem("name");
+	tel = storage.getItem("tel");
+	name =storage.getItem("name");
 	role = storage.getItem("role");	
-//	storage.removeItem(tel);
-//	storage.removeItem(name);
-	if(telephone && userName){
-		changeUserBar(userName,telephone);
+
+	if(tel && name){
+		changeUserBar(name,tel);
 	}
 });
 

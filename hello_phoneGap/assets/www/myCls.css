@@ -76,9 +76,20 @@
 	left:64%;
 	width:32%;
 }
+.newGood{
+	position:relative;
+	top:30px;
+}
 
 .theUser{
 	#font-size: 17px;
 	#font-weight: bold;
 	text-align: center;
+}
+#uploadPic{
+	width:300px;
+}
+#scanPic{
+	width:30%
+	
 }
